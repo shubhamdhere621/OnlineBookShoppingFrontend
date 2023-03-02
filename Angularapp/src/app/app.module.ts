@@ -7,6 +7,7 @@ import { NavComponent } from './nav/nav.component';
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -16,9 +17,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent
   ],
   imports: [
-    BrowserModule,
+  
+  BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
