@@ -8,13 +8,15 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material/material.module';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     AuthComponent,
-    HomeComponent
+    HomeComponent,
+    SignupComponent
   ],
   imports: [
   
