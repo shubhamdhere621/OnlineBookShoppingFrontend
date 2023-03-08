@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material/material.module';
 import { SignupComponent } from './signup/signup.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SignupComponent } from './signup/signup.component';
     NavComponent,
     AuthComponent,
     HomeComponent,
-    SignupComponent
+    SignupComponent,
+    ServicesComponent
   ],
   imports: [
   
