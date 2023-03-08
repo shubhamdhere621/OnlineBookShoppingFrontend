@@ -9,8 +9,12 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material/material.module';
 import { SignupComponent } from './signup/signup.component';
+<<<<<<< HEAD
 import { ServicesComponent } from './services/services.component';
 
+=======
+import { ReactiveFormsModule } from '@angular/forms';
+>>>>>>> c0dd98cd4db1c7b7a6720c904c65ca2dd728f75a
 @NgModule({
   declarations: [
     AppComponent,
