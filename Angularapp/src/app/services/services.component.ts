@@ -16,7 +16,7 @@ import { User, UserType } from '../models/models';
   providedIn: 'root',
 })
 export class ServicesComponent {
-  baseUrl = 'https://localhost:7038/api/Library/';
+  baseUrl = 'https://localhost:7038/api/book';
   constructor(private http: HttpClient, private jwt: JwtHelperService) {}
 
   createAccount(user: User) {

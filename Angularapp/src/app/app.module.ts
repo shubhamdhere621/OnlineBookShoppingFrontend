@@ -9,12 +9,15 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material/material.module';
 import { SignupComponent } from './signup/signup.component';
-<<<<<<< HEAD
-import { ServicesComponent } from './services/services.component';
 
-=======
+import { ServicesComponent } from './services/services.component';
 import { ReactiveFormsModule } from '@angular/forms';
->>>>>>> c0dd98cd4db1c7b7a6720c904c65ca2dd728f75a
+import { HttpClientModule } from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,13 +28,27 @@ import { ReactiveFormsModule } from '@angular/forms';
     ServicesComponent
   ],
   imports: [
-  
-  BrowserModule,
+    BrowserModule,
     AppRoutingModule,
     NgbModule,
-    MaterialModule
+    ReactiveFormsModule,HttpClientModule,
+  
+    MaterialModule,
+    JwtModule.forRoot({
+      config: {
+      tokenGetter: () => {
+        return localStorage.getItem('access_token');
+      },
+      allowedDomains: ['localhost:7038'],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
+
+  
+    
+ 
 })
 export class AppModule { }
