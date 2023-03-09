@@ -1,37 +1,63 @@
-<div class="wrapper">
-  
-    <div class="text-center mt-4 name">
-        Sign Up
-    </div>
-    <form class="p-3 mt-3">
-        <div class="form-field d-flex align-items-center">
-            <span class="far fa-user"></span>
-            <input type="text" name="firstName" id="firstName" placeholder="First Name">
-        </div>
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="text" name="lastName" id="lastName" placeholder="Last Name">
-        </div>
+<h1>Sign Up</h1>
 
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="email" name="email" id="email" placeholder="Email Id">
-        </div>
+<h2>{{responseMsg}}</h2>
 
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="password" name="password" id="password" placeholder="Password">
-        </div>
+<mat-grid-list cols="2" rowHeight="100px" gutterSize="10px" [formGroup]="signupForm">
 
-        <div class="form-field d-flex align-items-center">
-            <span class="fas fa-key"></span>
-            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
-        </div>
+    <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName">
+            <mat-error class="error" *ngIf="this.FirstName.invalid">{{getFirstNameErrors()}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
 
-        <button class="btn mt-3" >Sign Up</button>
-    </form>
-    <div class="text-center fs-6">
-        <a href="auth">Already have an account? Login</a>
-    </div>
-  </div>
+    <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName">
+            <mat-error  class="error" *ngIf="this.LastName.invalid">{{getLastNameErrors()}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
 
+    <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-error class="error" *ngIf="this.Email.invalid">{{getEmailErrors()}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Password</mat-label>
+            <input matInput  formControlName="password">
+            
+            <mat-error class="error" *ngIf="this.Password.invalid">{{getPasswordErrors()}}</mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput formControlName="confirmPassword">
+            
+            <mat-error  class="error" *ngIf="this.ConfirmPassword.hasError('confirmPassword')">
+                Must be same as Password.
+            </mat-error>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile colspan="2">
+        <button mat-flat-button color="accent" class="signup-btn" (click)="signup()"
+                [disabled]="signupForm.invalid">
+            SIGN UP
+        </button>
+    </mat-grid-tile>
+
+</mat-grid-list>
+
+<div class="login-link">
+    <span>Already have an account?</span>
+    <button mat-stroked-button color="accent" routerLink="/login">Log in</button>
+</div>
